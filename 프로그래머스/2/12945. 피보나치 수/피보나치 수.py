@@ -1,8 +1,5 @@
 def solution(n):
-    F = []
-    for i in range(n+1):
-        if i <= 1:
-            F.append(i)
-        else:
-            F.append(F[i-1]+F[i-2])
-    return F[n] % 1234567
+    fib = [0, 1]
+    for i in range(2, n + 1):
+        fib.append((fib[i - 1] + fib[i - 2]) % 1234567)
+    return fib[n]
